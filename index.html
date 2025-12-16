@@ -2,216 +2,242 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tea Junction | Ajmer</title>
+<title>Tea Junction | Tea & Coffee Café – Ajmer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ================= COLOUR THEME ================= */
+:root{
+  --dark:#3e2723;        /* dark brown */
+  --brown:#6f4e37;       /* tea brown */
+  --cream:#f3e5ab;       /* light tea */
+  --gold:#d7b899;        /* premium */
+  --blue:#3b82f6;        /* modern accent */
+  --bg:#f5f5f5;          /* soft grey */
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:Poppins, sans-serif;
-  background:#fffaf3;
-  color:#2b2b2b;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.7;
+}
+
+/* OFFER */
+.offer{
+  background:linear-gradient(90deg,var(--gold),var(--cream));
+  text-align:center;
+  padding:15px;
+  font-weight:600;
 }
 
 /* HEADER */
 header{
-  background:linear-gradient(135deg,#7c2d12,#f59e0b);
+  background:linear-gradient(135deg,var(--dark),var(--brown),var(--blue));
   color:#fff;
   text-align:center;
-  padding:70px 20px;
+  padding:90px 20px;
 }
 header h1{
   font-family:'Playfair Display', serif;
-  font-size:46px;
+  font-size:52px;
   letter-spacing:2px;
 }
-header p{margin-top:10px;font-size:18px}
+header p{color:var(--cream);margin-top:12px;font-size:18px}
 
+/* BUTTON */
 .btn{
-  margin-top:25px;
-  padding:14px 34px;
-  background:#fff;
-  color:#7c2d12;
+  margin-top:28px;
+  padding:15px 38px;
+  background:linear-gradient(90deg,var(--cream),var(--gold));
+  color:var(--dark);
   border:none;
   border-radius:30px;
   font-weight:600;
   cursor:pointer;
+  box-shadow:0 8px 18px rgba(0,0,0,.2);
 }
 
 /* SECTIONS */
 section{
-  max-width:1100px;
+  max-width:1150px;
   margin:auto;
-  padding:60px 20px;
+  padding:80px 20px;
 }
 section h2{
   font-family:'Playfair Display', serif;
-  font-size:32px;
-  margin-bottom:20px;
+  font-size:36px;
+  margin-bottom:25px;
+  color:var(--brown);
 }
 
 /* CARDS */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:24px;
 }
 .card{
   background:#fff;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  padding:32px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(62,39,35,.18);
   text-align:center;
+  border-top:6px solid var(--blue);
 }
 
-/* FORM */
-form{
-  background:#fff;
-  padding:30px;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+/* MENU TITLE */
+.menu-title{
+  font-size:22px;
+  color:var(--brown);
+  margin-bottom:8px;
 }
-input,select{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
+
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,var(--brown),var(--blue));
+  color:#fff;
+  text-align:center;
+  padding:70px 20px;
 }
 
 /* FOOTER */
 footer{
-  background:#1c1917;
-  color:#fff;
+  background:linear-gradient(135deg,var(--dark),var(--brown));
+  color:var(--cream);
   text-align:center;
-  padding:20px;
+  padding:45px 20px;
 }
 
-/* WHATSAPP */
-.whatsapp{
+/* FLOAT BUTTONS */
+.whatsapp,.call{
   position:fixed;
-  bottom:20px;
   right:20px;
-  background:#25d366;
   color:#fff;
-  padding:14px 18px;
+  padding:15px 18px;
   border-radius:50%;
   font-size:22px;
   text-decoration:none;
+  box-shadow:0 8px 18px rgba(0,0,0,.3);
 }
-
-/* OFFER */
-.offer{
-  background:#fef3c7;
-  text-align:center;
-  padding:15px;
-  font-weight:600;
-}
+.whatsapp{bottom:20px;background:#25d366}
+.call{bottom:85px;background:var(--blue)}
 </style>
 </head>
 
 <body>
 
-<!-- OFFER BANNER -->
 <div class="offer">
 🔥 Today’s Special: Kullad Tea @ ₹30 Only 🔥
 </div>
 
 <header>
-<img src="logo.png" alt="Tea Junction Logo"
-style="width:140px;margin-bottom:15px;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,0.25);">
-
+<img src="logo.png" style="width:150px;border-radius:50%;box-shadow:0 10px 25px rgba(0,0,0,.35);margin-bottom:18px;">
 <h1>Tea Junction</h1>
-<p>Fresh Chai • Desi Swad • Perfect Break</p>
-<button class="btn" onclick="scrollToMenu()">View Menu</button>
+<p>Tea • Coffee • Conversations</p>
+<button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+Explore Menu
+</button>
 </header>
 
 <section>
 <h2>About Tea Junction</h2>
 <p>
-Tea Junction Ajmer ka ek stylish chai point hai jahan aapko milti hai
-fresh chai, kullad chai aur cup tea — affordable price me.
+Tea Junction Ajmer ka ek premium chai & coffee café hai jahan
+fresh ingredients, hygienic preparation aur rich taste ka perfect blend milta hai.
 </p>
 </section>
 
 <section>
 <h2>Opening Hours</h2>
-<p style="font-size:18px;">⏰ Open Daily: <strong>6:00 AM – 10:00 PM</strong></p>
+<p>🟢 <strong>Open Now</strong><br>⏰ 6:00 AM – 10:00 PM</p>
+</section>
+
+<section>
+<h2>Our Journey in Numbers</h2>
+<div class="cards">
+  <div class="card"><h3>☕ 10,000+</h3><p>Cups Served</p></div>
+  <div class="card"><h3>⭐ 4.9</h3><p>Customer Rating</p></div>
+  <div class="card"><h3>👥 2,000+</h3><p>Happy Customers</p></div>
+  <div class="card"><h3>📍 Ajmer</h3><p>Serving Daily</p></div>
+</div>
 </section>
 
 <section id="menu">
-<h2>Our Tea Menu</h2>
+<h2>Our Menu ☕</h2>
+
+<h3>Tea Special</h3>
 <div class="cards">
-  <div class="card">☕ <strong>Fresh Tea</strong><br>₹10 – ₹50</div>
-  <div class="card">🏺 <strong>Kullad Tea</strong><br>₹10 – ₹50</div>
-  <div class="card">🍵 <strong>Cup Tea</strong><br>₹10 – ₹50</div>
+  <div class="card"><div class="menu-title">Fresh Tea</div>₹10 – ₹50</div>
+  <div class="card"><div class="menu-title">Kullad Tea</div>₹10 – ₹50</div>
+  <div class="card"><div class="menu-title">Green Tea</div>₹10 – ₹50</div>
+</div>
+
+<br><br>
+
+<h3>Coffee Special</h3>
+<div class="cards">
+  <div class="card"><div class="menu-title">Hot Coffee</div>₹30 – ₹80</div>
+  <div class="card"><div class="menu-title">Cold Coffee</div>₹40 – ₹100</div>
+  <div class="card"><div class="menu-title">Black Coffee</div>₹30 – ₹70</div>
+  <div class="card"><div class="menu-title">Couple Coffee</div>₹80 – ₹150</div>
 </div>
 </section>
 
 <section>
-<h2>What Our Customers Say ☕</h2>
+<h2>Why People Love Tea Junction</h2>
 <div class="cards">
-  <div class="card">⭐⭐⭐⭐⭐<p>Outstanding Tea</p></div>
-  <div class="card">⭐⭐⭐⭐⭐<p>Love Tea</p></div>
-  <div class="card">⭐⭐⭐⭐⭐<p>Special Taste</p></div>
+  <div class="card">❤️ Consistent Taste</div>
+  <div class="card">💰 Pocket Friendly</div>
+  <div class="card">😊 Friendly Service</div>
+  <div class="card">☕ Perfect Tea & Coffee</div>
 </div>
 </section>
 
 <section>
-<h2>Give Your Feedback</h2>
-<form onsubmit="submitFeedback();return false;">
-  <input type="text" placeholder="Your Name" required>
-  <input type="text" placeholder="Your Feedback" required>
-  <select required>
-    <option value="">Rating</option>
-    <option>⭐</option>
-    <option>⭐⭐</option>
-    <option>⭐⭐⭐</option>
-    <option>⭐⭐⭐⭐</option>
-    <option>⭐⭐⭐⭐⭐</option>
-  </select>
-  <button class="btn" type="submit">Submit Feedback</button>
-</form>
+<h2>Customer Reviews ⭐</h2>
+<div class="cards">
+  <div class="card">⭐⭐⭐⭐⭐<p>Outstanding Taste</p></div>
+  <div class="card">⭐⭐⭐⭐⭐<p>Best Café in Ajmer</p></div>
+  <div class="card">⭐⭐⭐⭐⭐<p>Clean & Hygienic</p></div>
+</div>
 </section>
 
 <section>
-<h2>Contact Us</h2>
+<h2>FAQs</h2>
 <p>
-📍 <strong>Area:</strong> Ajmer <br><br>
-📞 <strong>Mobile:</strong> 9352665561 <br><br>
-📧 <strong>Email:</strong> manishkumarq96@gmail.com
+❓ Home delivery? – WhatsApp available<br>
+❓ Bulk orders? – Yes<br>
+❓ Tea & Coffee dono? – Yes
 </p>
 </section>
 
 <section>
 <h2>Find Us on Google Maps</h2>
-<iframe 
-src="https://www.google.com/maps?q=Ajmer&output=embed"
-width="100%" height="300"
-style="border:0;border-radius:15px;"
-loading="lazy">
-</iframe>
+<iframe src="https://www.google.com/maps?q=Ajmer&output=embed"
+width="100%" height="320" style="border-radius:16px;border:0"></iframe>
 </section>
 
+<div class="cta">
+<h2>☕ Aaj Chai ya Coffee ka Mood Hai?</h2>
+<p>Call ya WhatsApp karo – Tea Junction ready hai!</p>
+</div>
+
 <footer>
-<p>© 2025 Tea Junction | Ajmer</p>
+<p><strong>Tea Junction – Ajmer</strong></p>
+<p>📞 9352665561 | 📧 manishkumarq96@gmail.com</p>
+<p>© 2025 Tea Junction</p>
 </footer>
 
 <a class="whatsapp"
-href="https://wa.me/919352665561?text=Hello%20Tea%20Junction,%20mujhe%20chai%20order%20karni%20hai%20☕"
+href="https://wa.me/919352665561?text=Hello%20Tea%20Junction,%20mujhe%20order%20karna%20hai%20☕"
 target="_blank">💬</a>
 
-<script>
-function scrollToMenu(){
-  document.getElementById("menu").scrollIntoView({behavior:"smooth"});
-}
-function submitFeedback(){
-  alert("Thank you! Aapka feedback Tea Junction ke liye bahut important hai ☕");
-}
-</script>
+<a class="call" href="tel:9352665561">📞</a>
 
 </body>
 </html>
